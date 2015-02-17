@@ -22,12 +22,9 @@ SECRET_KEY = '3k(iaasfluln-id@pqml0yciuuyq4z@9q@x-x#^eg3+gmkk*nr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['127.0.0.1',]
-
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
+    'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,7 +48,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
+
+# Debug-Toolbar Settings
+INTERNAL_IPS = ('127.0.0.1',)
 
 ROOT_URLCONF = 'reblog.urls'
 
@@ -59,9 +62,9 @@ WSGI_APPLICATION = 'reblog.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-cn'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
