@@ -52,3 +52,12 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#static files
+site-static/
+
+# Mac file
+.DS_Store
+
+# DB File
+*.sqlite3

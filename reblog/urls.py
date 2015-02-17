@@ -10,3 +10,13 @@ urlpatterns = patterns('',
     url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+
+#from django.conf import settings
+
+#if not settings.DEBUG:
+#    urlpatterns += patterns('',
+#        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+#            'document_root': settings.STATIC_ROOT,
+#        }),
+#    )
