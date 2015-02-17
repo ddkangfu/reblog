@@ -1,0 +1,13 @@
+{% extends "error.html" %}
+
+{% block title %}
+没有找到网页 | {{ block.super }}
+{% endblock %}
+
+{% block error_heading %}
+没有找到网页
+{% endblock %}
+
+{% block error_message %}
+<p>对不起我们找不到您所要的网页。</p>
+{% endblock %}

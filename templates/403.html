@@ -1,0 +1,13 @@
+{% extends "error.html" %}
+
+{% block title %}
+    未授权访问 | {{ block.super }}
+{% endblock %}
+
+{% block error_heading %}
+    未授权访问
+{% endblock %}
+
+{% block error_message %}
+    <p>非常抱歉，您不能访问这个页面。</p>
+{% endblock %}

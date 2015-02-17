@@ -22,6 +22,9 @@ SECRET_KEY = '3k(iaasfluln-id@pqml0yciuuyq4z@9q@x-x#^eg3+gmkk*nr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1',]
+
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []

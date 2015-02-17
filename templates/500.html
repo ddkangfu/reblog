@@ -1,0 +1,14 @@
+{% extends "error.html" %}
+
+{% block title %}
+    服务器错误 | {{ block.super }}
+{% endblock %}
+
+{% block error_heading %}
+    服务器错误
+{% endblock %}
+
+{% block error_message %}
+    <p>We're sorry but something went terribly wrong and we've been unable to generate the page you requested.</p>
+    <p>此次事故已经被记录，一位工程师会尽快解决。</p>
+{% endblock %}
