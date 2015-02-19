@@ -3,7 +3,7 @@
 {% block layout %}
 <ul>
 {% for blog in blog_list %}
-    <li>{{ blog }}</li>
+    <li><a href="{% url post blog.id %}">{{ blog.title }}</a></li>
 {% empty %}
     <li>Sorry, no athletes in this list.</li>
 {% endfor %}

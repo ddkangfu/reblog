@@ -8,6 +8,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'reblog.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', views.HomeView.as_view(), name='home'),
+    url(r'^post/(?P<pk>\d+)/$', views.HomeView.as_view(), name='post'),
+
     url(r'^admin/', include(admin.site.urls)),
 )
 
