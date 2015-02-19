@@ -1,1 +1,11 @@
 {% extends "base.html" %}
+
+{% block layout %}
+<ul>
+{% for blog in blog_list %}
+    <li>{{ blog }}</li>
+{% empty %}
+    <li>Sorry, no athletes in this list.</li>
+{% endfor %}
+</ul>
+{% endblock %}
