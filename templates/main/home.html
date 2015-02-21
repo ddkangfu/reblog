@@ -1,11 +1,156 @@
-{% extends "base.html" %}
+{#{% extends "base.html" %}#}
 
-{% block layout %}
-<ul>
-{% for blog in blog_list %}
-    <li><a href="{% url post blog.id %}">{{ blog.title }}</a></li>
-{% empty %}
-    <li>Sorry, no athletes in this list.</li>
-{% endfor %}
-</ul>
-{% endblock %}
+{#{% block layout %}#}
+{#<ul>#}
+{#{% for blog in blog_list %}#}
+{#    <li><a href="{% url post blog.id %}">{{ blog.title }}</a></li>#}
+{#{% empty %}#}
+{#    <li>Sorry, no athletes in this list.</li>#}
+{#{% endfor %}#}
+{#</ul>#}
+{#{% endblock %}#}
+
+
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>知秋</title>
+
+    <!-- 使用url函数转换相关路径 -->
+    <link rel="stylesheet" href="http://cdn.staticfile.org/normalize/2.1.3/normalize.min.css">
+    <link rel="stylesheet" href="http://ac-iold8ot9.clouddn.com/wJvmgmEQF7XctxxeTfPPfdwRYeXXIBfT59AsyRG8.css">
+    <link rel="icon" type="image/png" href="http://ac-iold8ot9.clouddn.com/GPtKnopOth9w8qD3vespoqGqtwavjx5lrjEiTKXG.png" />
+
+    <!--[if lt IE 9]>
+    <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="http://cdn.staticfile.org/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 通过自有函数输出HTML头部信息 -->
+    <meta name="description" content="" />
+<meta name="generator" content="Typecho 1.0/14.10.10" />
+<meta name="template" content="default" />
+<link rel="pingback" href="/action/xmlrpc" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/action/xmlrpc?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/action/xmlrpc?wlw" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/" />
+<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/" />
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/" />
+</head>
+<body>
+<!--[if lt IE 8]>
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<![endif]-->
+
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="site-name col-mb-12 col-9">
+                <a id="logo" href="/">知秋</a>
+                <p class="description"></p>
+            </div>
+            <div class="site-search col-3 kit-hidden-tb">
+                <form id="search" method="post" action="./" role="search">
+                    <label for="s" class="sr-only">搜索关键字</label>
+                    <input type="text" name="s" class="text" placeholder="输入关键字搜索" />
+                    <button type="submit" class="submit">搜索</button>
+                </form>
+            </div>
+            <div class="col-mb-12">
+                <nav id="nav-menu" class="clearfix" role="navigation">
+                    <a class="current" href="/">首页</a>
+                    <a href="/about.html" title="关于">关于</a>
+                </nav>
+            </div>
+        </div><!-- end .row -->
+    </div>
+</header><!-- end #header -->
+<div id="body">
+    <div class="container">
+        <div class="row">
+
+<div class="col-mb-12 col-8" id="main" role="main">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h2 class="post-title" itemprop="name headline"><a itemtype="url" href="/archives/21/">文章标题</a></h2>
+        <ul class="post-meta">
+            <li itemprop="author" itemscope itemtype="http://schema.org/Person">作者: <a itemprop="name" href="/author/1/" rel="author">xxxx</a></li>
+            <li>时间: <time datetime="2015-02-19T16:20:00+08:00" itemprop="datePublished">February 19, 2015</time></li>
+            <li>分类: <a href="/category/default/">默认分类</a></li>
+            <li itemprop="interactionCount"><a itemprop="discussionUrl" href="/archives/21/#comments">评论</a></li>
+        </ul>
+        <div class="post-content" itemprop="articleBody">
+            <p>视频：<a href="#">视频链接</a></p>
+            <p class="more"><a href="/archives/21/" title="51单片机流水灯实验">- 阅读剩余部分 -</a></p>
+        </div>
+    </article>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h2 class="post-title" itemprop="name headline"><a itemtype="url" href="/archives/19/">文章标题</a></h2>
+        <ul class="post-meta">
+            <li itemprop="author" itemscope itemtype="http://schema.org/Person">作者: <a itemprop="name" href="/author/1/" rel="author">xxx</a></li>
+            <li>时间: <time datetime="2015-02-16T20:26:00+08:00" itemprop="datePublished">February 16, 2015</time></li>
+            <li>分类: <a href="/category/default/">默认分类</a></li>
+            <li itemprop="interactionCount"><a itemprop="discussionUrl" href="/archives/19/#comments">评论</a></li>
+        </ul>
+        <div class="post-content" itemprop="articleBody">
+            <p><img src="#" alt="图片" /></p>
+            <p>内容<br />
+            内容简介。</p>
+            <p class="more"><a href="/archives/19/" title="视频直播技术细节设想">- 阅读剩余部分 -</a></p>
+        </div>
+    </article>
+    
+    <ol class="page-navigator"><li class="current"><a href="/page/1/">1</a></li><li><a href="/page/2/">2</a></li><li class="next"><a href="/page/2/">后一页 &raquo;</a></li></ol></div><!-- end #main-->
+
+    <div class="col-mb-12 col-offset-1 col-3 kit-hidden-tb" id="secondary" role="complementary">
+        <section class="widget">
+            <h3 class="widget-title">最新文章</h3>
+            <ul class="widget-list">
+                <li><a href="/archives/21/">文章标题1</a></li><li><a href="/archives/19/">文章标题2</a></li><li><a href="/archives/16/">文章标题3</a></li><li><a href="/archives/14/">文章标题4</a></li>
+            </ul>
+        </section>
+    
+        <section class="widget">
+        <h3 class="widget-title">最近回复</h3>
+        <ul class="widget-list">
+            <li><a href="#comment-3">AAA</a>: 回复内容1</li>
+            <li><a href="#comment-2">BBB</a>: 回复内容2</li>
+            <li><a href="#comment-1">CCC</a>: 回复内容3</li>
+        </ul>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+        <ul class="widget-list"><li class="category-level-0 category-parent"><a href="/category/default/">分类1</a></li></ul>   </section>
+    
+        <section class="widget">
+        <h3 class="widget-title">归档</h3>
+        <ul class="widget-list">
+            <li><a href="/2015/02/">February 2015</a></li><li><a href="/2015/01/">January 2015</a></li>        </ul>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://miku.host.smartgslb.com/">Sorachan</a></li>
+            <li><a href="http://www.hyyyp.com/">Krabs</a></li>
+            <li><a href="/feed/">文章 RSS</a></li>
+            <li><a href="/feed/comments/">评论 RSS</a></li>
+        </ul>
+    </section>
+    
+</div><!-- end #sidebar -->
+
+        </div><!-- end .row -->
+    </div>
+</div><!-- end #body -->
+
+<footer id="footer" role="contentinfo">
+    &copy; 2015 <a href="/">知秋</a>
+</footer><!-- end #footer -->
+
+</body>
+</html>
