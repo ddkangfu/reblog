@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>51单片机流水灯实验 - 知秋</title>
+
+    <!-- 使用url函数转换相关路径 -->
+    <link rel="stylesheet" href="http://cdn.staticfile.org/normalize/2.1.3/normalize.min.css">
+    <link rel="stylesheet" href="http://ac-iold8ot9.clouddn.com/wJvmgmEQF7XctxxeTfPPfdwRYeXXIBfT59AsyRG8.css">
+    <link rel="icon" type="image/png" href="http://ac-iold8ot9.clouddn.com/GPtKnopOth9w8qD3vespoqGqtwavjx5lrjEiTKXG.png" />
+
+    <!--[if lt IE 9]>
+    <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="http://cdn.staticfile.org/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 通过自有函数输出HTML头部信息 -->
+    <meta name="description" content="" />
+<meta name="generator" content="Typecho 1.0/14.10.10" />
+<meta name="template" content="default" />
+<link rel="pingback" href="http://cenegd.com/action/xmlrpc" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cenegd.com/action/xmlrpc?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cenegd.com/action/xmlrpc?wlw" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://cenegd.com/feed/archives/21/" />
+<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="http://cenegd.com/feed/rss/archives/21/" />
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="http://cenegd.com/feed/atom/archives/21/" />
+<script type="text/javascript">
+(function () {
+    window.TypechoComment = {
+        dom : function (id) {
+            return document.getElementById(id);
+        },
+    
+        create : function (tag, attr) {
+            var el = document.createElement(tag);
+        
+            for (var key in attr) {
+                el.setAttribute(key, attr[key]);
+            }
+        
+            return el;
+        },
+
+        reply : function (cid, coid) {
+            var comment = this.dom(cid), parent = comment.parentNode,
+                response = this.dom('respond-post-21'), input = this.dom('comment-parent'),
+                form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0],
+                textarea = response.getElementsByTagName('textarea')[0];
+
+            if (null == input) {
+                input = this.create('input', {
+                    'type' : 'hidden',
+                    'name' : 'parent',
+                    'id'   : 'comment-parent'
+                });
+
+                form.appendChild(input);
+            }
+
+            input.setAttribute('value', coid);
+
+            if (null == this.dom('comment-form-place-holder')) {
+                var holder = this.create('div', {
+                    'id' : 'comment-form-place-holder'
+                });
+
+                response.parentNode.insertBefore(holder, response);
+            }
+
+            comment.appendChild(response);
+            this.dom('cancel-comment-reply-link').style.display = '';
+
+            if (null != textarea && 'text' == textarea.name) {
+                textarea.focus();
+            }
+
+            return false;
+        },
+
+        cancelReply : function () {
+            var response = this.dom('respond-post-21'),
+            holder = this.dom('comment-form-place-holder'), input = this.dom('comment-parent');
+
+            if (null != input) {
+                input.parentNode.removeChild(input);
+            }
+
+            if (null == holder) {
+                return true;
+            }
+
+            this.dom('cancel-comment-reply-link').style.display = 'none';
+            holder.parentNode.insertBefore(response, holder);
+            return false;
+        }
+    };
+})();
+</script>
+<script type="text/javascript">
+(function () {
+    var event = document.addEventListener ? {
+        add: 'addEventListener',
+        focus: 'focus',
+        load: 'DOMContentLoaded'
+    } : {
+        add: 'attachEvent',
+        focus: 'onfocus',
+        load: 'onload'
+    };
+
+    document[event.add](event.load, function () {
+        var r = document.getElementById('respond-post-21');
+
+        if (null != r) {
+            var forms = r.getElementsByTagName('form');
+            if (forms.length > 0) {
+                var f = forms[0], textarea = f.getElementsByTagName('textarea')[0], added = false;
+
+                if (null != textarea && 'text' == textarea.name) {
+                    textarea[event.add](event.focus, function () {
+                        if (!added) {
+                            var input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = '_';
+                            input.value = (function () {
+    var _FbAtdX = //'u8'
+'d0'+//'51d'
+'0'+'9c6'//'5TK'
++/* '0'//'0' */''+/* 'a5'//'a5' */''+'5cb'//'1'
++//'D'
+'7f'+//'F'
+'8b'+/* 'D'//'D' */''+/* 'nn'//'nn' */''+'5e9'//'pEQ'
++'j'//'j'
++'df'//'m'
++'819'//'psw'
++//'xDc'
+'7'+//'H'
+'9e'+''///*'a'*/'a'
++//'buu'
+'buu'+'5a'//'f'
++//'O'
+'O'+/* 'i'//'i' */''+/* 'J'//'J' */''+'37'//'cxR'
++/* 'IHV'//'IHV' */''+//'Be'
+'685'+''///*'Rl'*/'Rl'
++//'4'
+'7', _raT = [[16,17],[24,27],[26,27]];
+    
+    for (var i = 0; i < _raT.length; i ++) {
+        _FbAtdX = _FbAtdX.substring(0, _raT[i][0]) + _FbAtdX.substring(_raT[i][1]);
+    }
+
+    return _FbAtdX;
+})();
+
+                            f.appendChild(input);
+                            added = true;
+                        }
+                    });
+                }
+            }
+        }
+    });
+})();
+</script></head>
+<body>
+<!--[if lt IE 8]>
+    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
+<![endif]-->
+
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="site-name col-mb-12 col-9">
+                <a id="logo" href="/">知秋</a>
+                <p class="description"></p>
+            </div>
+            <div class="site-search col-3 kit-hidden-tb">
+                <form id="search" method="post" action="./" role="search">
+                    <label for="s" class="sr-only">搜索关键字</label>
+                    <input type="text" name="s" class="text" placeholder="输入关键字搜索" />
+                    <button type="submit" class="submit">搜索</button>
+                </form>
+            </div>
+            <div class="col-mb-12">
+                <nav id="nav-menu" class="clearfix" role="navigation">
+                    <a class="current" href="/">首页</a>
+                    <a href="/about.html" title="关于">关于</a>
+                </nav>
+            </div>
+        </div><!-- end .row -->
+    </div>
+</header><!-- end #header -->
+
+<div id="body">
+    <div class="container">
+        <div class="row">
+<div class="col-mb-12 col-8" id="main" role="main">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="post-title" itemprop="name headline"><a itemtype="url" href="http://cenegd.com/archives/21/">标题</a></h1>
+        <ul class="post-meta">
+            <li itemprop="author" itemscope itemtype="http://schema.org/Person">作者: <a itemprop="name" href="http://cenegd.com/author/1/" rel="author">cenegd</a></li>
+            <li>时间: <time datetime="2015-02-19T16:20:00+08:00" itemprop="datePublished">February 19, 2015</time></li>
+            <li>分类: <a href="http://cenegd.com/category/default/">默认分类</a></li>
+        </ul>
+        <div class="post-content" itemprop="articleBody">
+            <p>实验视频：<a href="http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4">http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4</a></p>
+<!--more-->
+<pre><code>#include &lt;reg51.h&gt;
+#include &lt;intrins.h&gt;
+
+unsigned char n;
+sbit led1 = P2^0;
+void Delay10ms(unsigned int c);
+
+void main(void)
+{
+    led1 = 0; // 给定一个初始值
+    while(1)
+    {
+        for (n=0; n&lt;7; n++)
+        {
+            // 灯泡从右到左
+            P2 = _crol_(P2, 1);
+            Delay10ms(10);
+        }
+        for (n=0; n&lt;7; n++)
+        {
+            // 灯泡从左到右
+            P2 = _cror_(P2, 1);
+            Delay10ms(10); // 延迟 0.1 秒
+        }
+    }
+}
+
+void Delay10ms(unsigned int c)
+{
+    unsigned char a,b;
+    for(;c&gt;0;c--)
+        for(b=38;b&gt;0;b--)
+            for(a=130;a&gt;0;a--);
+}
+</code></pre>
+        </div>
+        <p itemprop="keywords" class="tags">标签: none</p>
+    </article>
+
+    <div id="comments">
+        
+        <div id="respond-post-21" class="respond">
+        <div class="cancel-comment-reply">
+        <a id="cancel-comment-reply-link" href="http://cenegd.com/archives/21/#respond-post-21" rel="nofollow" style="display:none" onclick="return TypechoComment.cancelReply();">取消回复</a>        </div>
+    
+        <h3 id="response">添加新评论</h3>
+        <form method="post" action="http://cenegd.com/archives/21/comment" id="comment-form" role="form">
+                        <p>
+                <label for="author" class="required">称呼</label>
+                <input type="text" name="author" id="author" class="text" value="" required />
+            </p>
+            <p>
+                <label for="mail" class="required">Email</label>
+                <input type="email" name="mail" id="mail" class="text" value="" required />
+            </p>
+            <p>
+                <label for="url">网站</label>
+                <input type="url" name="url" id="url" class="text" placeholder="http://" value="" />
+            </p>
+                        <p>
+                <label for="textarea" class="required">内容</label>
+                <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" required ></textarea>
+            </p>
+            <p>
+                <button type="submit" class="submit">提交评论</button>
+            </p>
+        </form>
+    </div>
+    </div>
+
+    <ul class="post-near">
+        <li>上一篇: <a href="#" title="标题1">标题1</a></li>
+        <li>下一篇: <a href="#" title="标题2">标题2</a></li>
+    </ul>
+</div><!-- end #main-->
+
+<div class="col-mb-12 col-offset-1 col-3 kit-hidden-tb" id="secondary" role="complementary">
+        <section class="widget">
+        <h3 class="widget-title">最新文章</h3>
+        <ul class="widget-list">
+            <li><a href="#">标题1</a></li><li><a href="#">标题2</a></li><li><a href="#">标题3</a></li><li><a href="#">标题4</a></li></ul>
+    </section>
+    
+        <section class="widget">
+        <h3 class="widget-title">最近回复</h3>
+        <ul class="widget-list">
+                            <li><a href="http://cenegd.com/archives/16/#comment-18">itorr</a>: 文字好棒！</li>
+                    <li><a href="http://cenegd.com/archives/16/#comment-17">Gimmy2333</a>: 哈哈</li>
+                    <li><a href="http://cenegd.com/archives/16/#comment-16">Sora</a>: Let it go.</li>
+                    <li><a href="http://cenegd.com/archives/16/#comment-15">Arabica</a>: 冒泡again</li>
+                    <li><a href="http://cenegd.com/archives/16/#comment-14">Gimmy2333</a>: 冒泡</li>
+                </ul>
+    </section>
+    
+        <section class="widget">
+        <h3 class="widget-title">分类</h3>
+        <ul class="widget-list"><li class="category-level-0 category-parent"><a href="http://cenegd.com/category/default/">默认分类</a></li></ul>   </section>
+    
+        <section class="widget">
+        <h3 class="widget-title">归档</h3>
+        <ul class="widget-list">
+            <li><a href="http://cenegd.com/2015/02/">February 2015</a></li><li><a href="http://cenegd.com/2015/01/">January 2015</a></li>        </ul>
+    </section>
+    
+        <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://miku.host.smartgslb.com/">Sorachan</a></li>
+            <li><a href="http://www.hyyyp.com/">Krabs</a></li>
+            <li><a href="http://cenegd.com/feed/">文章 RSS</a></li>
+            <li><a href="http://cenegd.com/feed/comments/">评论 RSS</a></li>
+        </ul>
+    </section>
+    
+</div><!-- end #sidebar -->
+
+        </div><!-- end .row -->
+    </div>
+</div><!-- end #body -->
+
+<footer id="footer" role="contentinfo">
+    &copy; 2015 <a href="/">知秋</a>
+</footer><!-- end #footer -->
+
+</body>
+</html>
