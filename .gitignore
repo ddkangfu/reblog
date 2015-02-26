@@ -61,3 +61,6 @@ site-static/
 
 # DB File
 *.sqlite3
+
+# pyCharm files
+.idea
