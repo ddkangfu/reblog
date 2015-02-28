@@ -1,32 +1,101 @@
-<!DOCTYPE HTML>
-<html class="no-js">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>51单片机流水灯实验 - 知秋</title>
+{% extends "base.html" %}
 
-    <!-- 使用url函数转换相关路径 -->
-    <link rel="stylesheet" href="http://cdn.staticfile.org/normalize/2.1.3/normalize.min.css">
-    <link rel="stylesheet" href="http://ac-iold8ot9.clouddn.com/wJvmgmEQF7XctxxeTfPPfdwRYeXXIBfT59AsyRG8.css">
-    <link rel="icon" type="image/png" href="http://ac-iold8ot9.clouddn.com/GPtKnopOth9w8qD3vespoqGqtwavjx5lrjEiTKXG.png" />
+{% block layout %}
+        <div class="row">
+<div class="col-mb-12 col-8" id="main" role="main">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="post-title" itemprop="name headline"><a itemtype="url" href="http://cenegd.com/archives/21/">标题</a></h1>
+        <ul class="post-meta">
+            <li itemprop="author" itemscope itemtype="http://schema.org/Person">作者: <a itemprop="name" href="http://cenegd.com/author/1/" rel="author">cenegd</a></li>
+            <li>时间: <time datetime="2015-02-19T16:20:00+08:00" itemprop="datePublished">February 19, 2015</time></li>
+            <li>分类: <a href="http://cenegd.com/category/default/">默认分类</a></li>
+        </ul>
+        <div class="post-content" itemprop="articleBody">
+            <p>实验视频：<a href="http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4">http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4</a></p>
+<!--more-->
+<pre><code>#include &lt;reg51.h&gt;
+#include &lt;intrins.h&gt;
 
-    <!--[if lt IE 9]>
-    <script src="http://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-    <script src="http://cdn.staticfile.org/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+unsigned char n;
+sbit led1 = P2^0;
+void Delay10ms(unsigned int c);
 
-    <!-- 通过自有函数输出HTML头部信息 -->
-    <meta name="description" content="" />
-<meta name="generator" content="Typecho 1.0/14.10.10" />
-<meta name="template" content="default" />
-<link rel="pingback" href="http://cenegd.com/action/xmlrpc" />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cenegd.com/action/xmlrpc?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cenegd.com/action/xmlrpc?wlw" />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://cenegd.com/feed/archives/21/" />
-<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="http://cenegd.com/feed/rss/archives/21/" />
-<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="http://cenegd.com/feed/atom/archives/21/" />
+void main(void)
+{
+    led1 = 0; // 给定一个初始值
+    while(1)
+    {
+        for (n=0; n&lt;7; n++)
+        {
+            // 灯泡从右到左
+            P2 = _crol_(P2, 1);
+            Delay10ms(10);
+        }
+        for (n=0; n&lt;7; n++)
+        {
+            // 灯泡从左到右
+            P2 = _cror_(P2, 1);
+            Delay10ms(10); // 延迟 0.1 秒
+        }
+    }
+}
+
+void Delay10ms(unsigned int c)
+{
+    unsigned char a,b;
+    for(;c&gt;0;c--)
+        for(b=38;b&gt;0;b--)
+            for(a=130;a&gt;0;a--);
+}
+</code></pre>
+        </div>
+        <p itemprop="keywords" class="tags">标签: none</p>
+    </article>
+
+    <div id="comments">
+
+        <div id="respond-post-21" class="respond">
+        <div class="cancel-comment-reply">
+        <a id="cancel-comment-reply-link" href="http://cenegd.com/archives/21/#respond-post-21" rel="nofollow" style="display:none" onclick="return TypechoComment.cancelReply();">取消回复</a>        </div>
+
+        <h3 id="response">添加新评论</h3>
+        <form method="post" action="http://cenegd.com/archives/21/comment" id="comment-form" role="form">
+                        <p>
+                <label for="author" class="required">称呼</label>
+                <input type="text" name="author" id="author" class="text" value="" required />
+            </p>
+            <p>
+                <label for="mail" class="required">Email</label>
+                <input type="email" name="mail" id="mail" class="text" value="" required />
+            </p>
+            <p>
+                <label for="url">网站</label>
+                <input type="url" name="url" id="url" class="text" placeholder="http://" value="" />
+            </p>
+                        <p>
+                <label for="textarea" class="required">内容</label>
+                <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" required ></textarea>
+            </p>
+            <p>
+                <button type="submit" class="submit">提交评论</button>
+            </p>
+        </form>
+    </div>
+    </div>
+
+    <ul class="post-near">
+        <li>上一篇: <a href="#" title="标题1">标题1</a></li>
+        <li>下一篇: <a href="#" title="标题2">标题2</a></li>
+    </ul>
+</div><!-- end #main-->
+
+    {% include "partials/sidebar.html" %}
+
+        </div><!-- end .row -->
+    </div>
+{% endblock %}
+
+{% block extrascripts %}
 <script type="text/javascript">
 (function () {
     window.TypechoComment = {
@@ -99,6 +168,7 @@
     };
 })();
 </script>
+
 <script type="text/javascript">
 (function () {
     var event = document.addEventListener ? {
@@ -164,111 +234,5 @@
         }
     });
 })();
-</script></head>
-<body>
-<!--[if lt IE 8]>
-    <div class="browsehappy" role="dialog">当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.</div>
-<![endif]-->
-
-{% include "partials/nav.html" %}
-
-<div id="body">
-    <div class="container">
-        <div class="row">
-<div class="col-mb-12 col-8" id="main" role="main">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 class="post-title" itemprop="name headline"><a itemtype="url" href="http://cenegd.com/archives/21/">标题</a></h1>
-        <ul class="post-meta">
-            <li itemprop="author" itemscope itemtype="http://schema.org/Person">作者: <a itemprop="name" href="http://cenegd.com/author/1/" rel="author">cenegd</a></li>
-            <li>时间: <time datetime="2015-02-19T16:20:00+08:00" itemprop="datePublished">February 19, 2015</time></li>
-            <li>分类: <a href="http://cenegd.com/category/default/">默认分类</a></li>
-        </ul>
-        <div class="post-content" itemprop="articleBody">
-            <p>实验视频：<a href="http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4">http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4</a></p>
-<!--more-->
-<pre><code>#include &lt;reg51.h&gt;
-#include &lt;intrins.h&gt;
-
-unsigned char n;
-sbit led1 = P2^0;
-void Delay10ms(unsigned int c);
-
-void main(void)
-{
-    led1 = 0; // 给定一个初始值
-    while(1)
-    {
-        for (n=0; n&lt;7; n++)
-        {
-            // 灯泡从右到左
-            P2 = _crol_(P2, 1);
-            Delay10ms(10);
-        }
-        for (n=0; n&lt;7; n++)
-        {
-            // 灯泡从左到右
-            P2 = _cror_(P2, 1);
-            Delay10ms(10); // 延迟 0.1 秒
-        }
-    }
-}
-
-void Delay10ms(unsigned int c)
-{
-    unsigned char a,b;
-    for(;c&gt;0;c--)
-        for(b=38;b&gt;0;b--)
-            for(a=130;a&gt;0;a--);
-}
-</code></pre>
-        </div>
-        <p itemprop="keywords" class="tags">标签: none</p>
-    </article>
-
-    <div id="comments">
-        
-        <div id="respond-post-21" class="respond">
-        <div class="cancel-comment-reply">
-        <a id="cancel-comment-reply-link" href="http://cenegd.com/archives/21/#respond-post-21" rel="nofollow" style="display:none" onclick="return TypechoComment.cancelReply();">取消回复</a>        </div>
-    
-        <h3 id="response">添加新评论</h3>
-        <form method="post" action="http://cenegd.com/archives/21/comment" id="comment-form" role="form">
-                        <p>
-                <label for="author" class="required">称呼</label>
-                <input type="text" name="author" id="author" class="text" value="" required />
-            </p>
-            <p>
-                <label for="mail" class="required">Email</label>
-                <input type="email" name="mail" id="mail" class="text" value="" required />
-            </p>
-            <p>
-                <label for="url">网站</label>
-                <input type="url" name="url" id="url" class="text" placeholder="http://" value="" />
-            </p>
-                        <p>
-                <label for="textarea" class="required">内容</label>
-                <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" required ></textarea>
-            </p>
-            <p>
-                <button type="submit" class="submit">提交评论</button>
-            </p>
-        </form>
-    </div>
-    </div>
-
-    <ul class="post-near">
-        <li>上一篇: <a href="#" title="标题1">标题1</a></li>
-        <li>下一篇: <a href="#" title="标题2">标题2</a></li>
-    </ul>
-</div><!-- end #main-->
-
-    {% include "partials/sidebar.html" %}
-
-        </div><!-- end .row -->
-    </div>
-</div><!-- end #body -->
-
-{% include "partials/footer.html" %}
-
-</body>
-</html>
+</script>
+{% endblock %}
