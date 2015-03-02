@@ -23,3 +23,10 @@ class HomeView(TemplateView):
                 ctx['post_list'] = post_list
 
         return ctx
+
+
+class PostView(TemplateView):
+    template_name = 'main/post.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(PostView, self).get_context_data(**kwargs)

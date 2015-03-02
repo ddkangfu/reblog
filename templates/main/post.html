@@ -12,42 +12,44 @@
                     </ul>
                     <div class="post-content" itemprop="articleBody">
                         <p>实验视频：<a href="http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4">http://ac-iold8ot9.clouddn.com/205UzArG1UrkJq5FJzERrE3n7P9Xv0N3PimWH5Ec.mp4</a></p>
-<!--more-->
-<pre><code>#include &lt;reg51.h&gt;
-#include &lt;intrins.h&gt;
+                        <!--more-->
+                        <pre>
+                            <code>#include &lt;reg51.h&gt;
+                        #include &lt;intrins.h&gt;
 
-unsigned char n;
-sbit led1 = P2^0;
-void Delay10ms(unsigned int c);
+                        unsigned char n;
+                        sbit led1 = P2^0;
+                        void Delay10ms(unsigned int c);
 
-void main(void)
-{
-    led1 = 0; // 给定一个初始值
-    while(1)
-    {
-        for (n=0; n&lt;7; n++)
-        {
-            // 灯泡从右到左
-            P2 = _crol_(P2, 1);
-            Delay10ms(10);
-        }
-        for (n=0; n&lt;7; n++)
-        {
-            // 灯泡从左到右
-            P2 = _cror_(P2, 1);
-            Delay10ms(10); // 延迟 0.1 秒
-        }
-    }
-}
+                        void main(void)
+                        {
+                            led1 = 0; // 给定一个初始值
+                            while(1)
+                            {
+                                for (n=0; n&lt;7; n++)
+                                {
+                                    // 灯泡从右到左
+                                    P2 = _crol_(P2, 1);
+                                    Delay10ms(10);
+                                }
+                                for (n=0; n&lt;7; n++)
+                                {
+                                    // 灯泡从左到右
+                                    P2 = _cror_(P2, 1);
+                                    Delay10ms(10); // 延迟 0.1 秒
+                                }
+                            }
+                        }
 
-void Delay10ms(unsigned int c)
-{
-    unsigned char a,b;
-    for(;c&gt;0;c--)
-        for(b=38;b&gt;0;b--)
-            for(a=130;a&gt;0;a--);
-}
-</code></pre>
+                        void Delay10ms(unsigned int c)
+                        {
+                            unsigned char a,b;
+                            for(;c&gt;0;c--)
+                                for(b=38;b&gt;0;b--)
+                                    for(a=130;a&gt;0;a--);
+                        }
+                            </code>
+                        </pre>
                     </div>
                     <p itemprop="keywords" class="tags">标签: none</p>
                 </article>
