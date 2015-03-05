@@ -1,4 +1,4 @@
-# codeing=utf-8
+# coding=utf-8
 
 from django.db import models
 from django.utils import timezone
@@ -16,12 +16,12 @@ class Post(models.Model):
     title = models.CharField(u"标题", max_length=60)
     slug = models.SlugField('slug', max_length=255,
                             unique_for_date='creation_date', help_text="Used to build the entry's URL.")
-    status = models.IntegerField(_('status'), db_index=True, choices=STATUS_CHOICES, default=DRAFT)
+    status = models.IntegerField('status', db_index=True, choices=STATUS_CHOICES, default=DRAFT)
     start_publication = models.DateTimeField('start publication', db_index=True, blank=True,
                                              null=True, help_text='Start date of publication.')
     end_publication = models.DateTimeField('end publication', db_index=True, blank=True, null=True,
                                            help_text='End date of publication.')
-    creation_date = models.DateTimeField('creation date', db_index=True, default=timezone.now,
+    creation_date = models.DateTimeField('creation date', db_index=True, auto_now_add=True,
                                          help_text="Used to build the entry's URL.")
     last_update = models.DateTimeField('last update', default=timezone.now)
 
@@ -49,7 +49,7 @@ class Post(models.Model):
     class Meta:
         ordering = ['-creation_date']
 
-
+"""
 class Category(models.Model):
     title = models.CharField(u"标题", max_length=255)
     slug = models.SlugField('slug', unique=True, max_length=255, help_text="Used to build the category's URL.")
@@ -63,10 +63,8 @@ class TagsEntry(models.Model):
 
     @property
     def tags_list(self):
-        """
-        Return iterable list of tags.
-        """
         return parse_tag_input(self.tags)
 
     class Meta:
         abstract = True
+"""
