@@ -1,5 +1,9 @@
 # coding=utf-8
 
+from mptt.models import MPTTModel
+from mptt.models import TreeForeignKey
+from mptt.managers import TreeManager
+
 from django.db import models
 from django.utils import timezone
 
@@ -49,22 +53,11 @@ class Post(models.Model):
     class Meta:
         ordering = ['-creation_date']
 
-"""
-class Category(models.Model):
+
+class Category(MPTTModel):
     title = models.CharField(u"标题", max_length=255)
     slug = models.SlugField('slug', unique=True, max_length=255, help_text="Used to build the category's URL.")
     description = models.TextField('description', blank=True)
     parent = TreeForeignKey('self', related_name='children', null=True, blank=True, verbose_name='parent category')
     objects = TreeManager()
 
-
-class TagsEntry(models.Model):
-    tags = TagField(_('tags'))
-
-    @property
-    def tags_list(self):
-        return parse_tag_input(self.tags)
-
-    class Meta:
-        abstract = True
-"""
