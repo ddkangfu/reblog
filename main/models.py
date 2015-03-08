@@ -62,7 +62,7 @@ class Category(MPTTModel):
     objects = TreeManager()
 
 
-class TagsEntry(models.Model):
+class Tag(models.Model):
     name = models.CharField(u"标签", max_length=255)
     is_deleted = models.BooleanField(u'是否已删除', default=False)
 

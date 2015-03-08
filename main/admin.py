@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from django.contrib import admin
-from .models import Post
+from .models import Post, Tag
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -15,3 +15,4 @@ class TagAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Tag, TagAdmin)
