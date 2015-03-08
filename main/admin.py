@@ -9,4 +9,9 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'status',)
 
 
+class TagAdmin(admin.ModelAdmin):
+    fields = ['tag', 'is_deleted']
+    list_display = ('tag', 'is_deleted', )
+
+
 admin.site.register(Post, PostAdmin)
